@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+	 <div id="wrapper">
+        <div id="container">
+          <h1>List of Symfony Repositories</h1>
+			<table border='0' cellspacing='0' cellpadding='0' class='list' style="border: 2px solid #FCC;">
+			     <tr class='bold'>
+				    <td class='list-header' width="10%">Avatar</td>
+					<td class='list-header' width="40%">Repository Name</td>
+					<td class='list-header' width="20%">Description</td>
+					<td class='list-header' width="10%">Forks Count</td>
+					<td class='list-header' width="10%">Watchers</td>
+			    </tr>
+				{% for repository in repositories %}
+					<tr>
+						<td><img src={{ repository.owner.avatar_url}} height='30px' width='30px'/></td>
+						<td><a class='link' href={{ repository.html_url}}> {{ repository.full_name}} </a></td>
+						<td> {{ repository.description}}</td>
+						<td> {{ repository.forks_count}}</td>
+						<td> {{ repository.watchers}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+        </div>
+    </div>
+    </body>
+</html>
