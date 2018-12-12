@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+app_aboutus_getinfo:
+  path: /aboutus/getinfo
+  controller: App\Controller\AboutusController::getinfo
+  
+app_list_getinfo:
+  path: /list/getinfo
+  controller: App\Controller\ListController::getinfo
